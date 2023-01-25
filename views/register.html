@@ -17,6 +17,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
     </head>
+
     <body>
         <header class="flex-bet-cen dark-bg030c30" id="header">
             <div class="logo">
@@ -32,24 +33,45 @@
                 </button>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
                     <li><a href="#Footer" class="cnt-btn1">Contact us</a></li>
                 </ul>
             </nav>
         </header>
         <main class="user-form">
             <div class="container flex-bet-cen">
-                <div class="sec2"></div>
+                <!-- <div class="sec2"></div> -->
                 <div class="sec">
                     <h1>Register</h1>
-                    <form action="/register" method="POST" id="form" autocomplete="off"/>
-                        <input type="email" name="email" id="email" required/>
-                        <input type="password" name="password" id="password" required/>
-                        <p>
-                            <a href="#">Forgot your password</a>
-                        </p>
-                        <button type="submit">login</button>
+                    <form action="/NotFound.html" method="GET" id="form" autocomplete="off"/>
+                    <div class="col">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="example.com" required/>
+                    </div>
+                    <div class="col">
+                        <ul class="errLog log1" name="errLog">
+                            <li>Username must lenght should be between 8 and 15</li>
+                            <li>Username should have at least one number</li>
+                        </ul>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="John233" required/>
+                    </div>
+                    <div class="col">
+                        <ul class="errLog log2" name="errLog">
+                            <li>Password must lenght should be between 8 and 15</li>
+                            <li>Password must contain symbol or number</li>
+                            <li>Passwords match</li>
+                        </ul>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password" required/>
+                    </div>
+                    <div class="col">
+                        <label for="comfirm_password">Comfirm Password</label>
+                        <input type="password" name="comfirm_password" id="comfirm_password" placeholder="comfirm password" required/>
+                    </div>
+                        <p><a href="login.html">Already have an account?</a></p>
+                        <button type="submit">register</button>
                     </form>
                 </div>
             </div>
@@ -101,8 +123,8 @@
                         <h4>Company</h4>
                         <ul>
                             <li><a href="/">Home</a></li>
-                            <li><a href="/login">Login</a></li>
-                            <li><a href="/register">Register</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="register.html">Register</a></li>
                             <li><a href="tel:+2347034797467">Contact us</a></li>
                         </ul>
                     </div>
@@ -137,6 +159,6 @@
         </footer>
         <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
         <script src="javascript/page-scroll-fixed.js" defer></script>
-        <script src="javascript/i-app.js" defer></script>
+        <script src="javascript/f-app.js" defer></script>
     </body>
 </html>

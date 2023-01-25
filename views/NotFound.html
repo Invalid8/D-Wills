@@ -4,8 +4,13 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>PAGE NOT FOUND</title>
-        <meta name="description" content="" />
+        <meta name="description" content="error page 404, not found" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="shortcut icon"
+            href="../public/image/icons8-dashboard-32.png"
+            type="image/x-icon"
+        />
         <link rel="stylesheet" href="css/style.css" />
     </head>
 
@@ -27,6 +32,22 @@
                 <div class="errorNotFound dark-bg030c30">
                     <h1>404</h1>
                     <h3>Not Found</h3>
+                    <button
+                        style="
+                            background-color: #ffffff;
+                            color: #030c30;
+                            padding: 0.5em 1.3em;
+                            font-weight: bold;
+                            font-size: 0.5em;
+                        "
+                    id="homepage">
+                        Back To Homepage
+                    </button>
+                    <script>
+                        document.getElementById("homepage").addEventListener('click', ()=>{
+                            location.href = "/"
+                        })
+                    </script>
                 </div>
                 <div class="top-svg">
                     <svg

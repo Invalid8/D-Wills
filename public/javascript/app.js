@@ -20,7 +20,7 @@ $(document).ready(function () {
     $(".next-section").on("click", function (event) {
         $("html, body").animate(
             {
-                scrollTop: $(".companies-section").offset().top,
+                scrollTop: $(".companies-section").offset().top - 90,
             },
             800
         );
@@ -29,7 +29,7 @@ $(document).ready(function () {
     $(".bottom .moreUsers").on("click", function (event) {
         $("html, body").animate(
             {
-                scrollTop: $("#Home").offset().top,
+                scrollTop: $("#Home").offset().top - 90,
             },
             800
         );
