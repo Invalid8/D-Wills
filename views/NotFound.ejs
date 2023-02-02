@@ -11,6 +11,7 @@
             href="../public/image/icons8-dashboard-32.png"
             type="image/x-icon"
         />
+        <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/style.css" />
     </head>
 
@@ -29,7 +30,7 @@
                         ></path>
                     </svg>
                 </div>
-                <div class="errorNotFound dark-bg030c30">
+                <div class="errorNotFound bbCard">
                     <h1>404</h1>
                     <h3>Not Found</h3>
                     <button
@@ -40,13 +41,16 @@
                             font-weight: bold;
                             font-size: 0.5em;
                         "
-                    id="homepage">
+                        id="homepage"
+                    >
                         Back To Homepage
                     </button>
                     <script>
-                        document.getElementById("homepage").addEventListener('click', ()=>{
-                            location.href = "/"
-                        })
+                        document
+                            .getElementById("homepage")
+                            .addEventListener("click", () => {
+                                location.href = "/";
+                            });
                     </script>
                 </div>
                 <div class="top-svg">

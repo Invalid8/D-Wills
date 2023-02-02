@@ -1,0 +1,445 @@
+/* custom styles */
+
+#Home {
+    max-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.o-grid {
+    display: grid;
+    gap: var(--gap-space);
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-space);
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-space);
+    align-items: center;
+}
+
+.grid-1col-1row {
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: 1;
+    gap: var(--gap-space);
+}
+/* custom styles */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 250px calc(100% - 250px);
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.dashboard .controls,
+.dashboard .dashView {
+    height: 100vh;
+    overflow: auto;
+}
+
+.dashboard .controls {
+    gap: 1.5em;
+    justify-content: space-between;
+    border-right: 0.1em solid var(--plain-white);
+}
+
+.userId {
+    text-align: center;
+    font-size: 0.7em;
+    text-transform: capitalize;
+    padding: 1em;
+}
+
+.otherLinks {
+    justify-content: space-evenly;
+    text-transform: capitalize;
+    padding: 1em;
+}
+
+.oLModal a {
+    color: var(--plain-white);
+}
+
+.userId .userImgBox {
+    width: 5em;
+    height: 5em;
+    margin: 0 auto;
+}
+
+.con-btn {
+    padding: 1em;
+}
+
+.con-btn button {
+    background-color: transparent;
+    text-transform: capitalize;
+}
+
+.con-btn .cbModal {
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1em;
+}
+
+.closeControl {
+    display: none;
+}
+
+.dashboard .dashView {
+    padding: 1em;
+}
+
+.navigateTo {
+    justify-content: space-between;
+    border-bottom: 1px solid var(--plain-white);
+    padding: 1em 0;
+    padding-bottom: 0.5em;
+    width: calc(100% - 300px);
+    position: fixed;
+    top: 0em;
+    background-color: var(--main-color);
+    z-index: 100;
+}
+
+.navigateTo button {
+    font-size: 1em;
+}
+
+.navigateTo button.menu-bar {
+    background: #e41111;
+    color: var(--plain-white);
+    /* padding: 0.1em; */
+    width: 1.6em;
+    height: 1.6em;
+}
+
+.navigateTo button.log-out {
+    background: transparent;
+    color: var(--plain-white);
+}
+
+.container {
+    grid-template-columns: 1fr;
+    margin-top: 3em;
+}
+
+.dashView .container .lookout,
+.dashView .container .workout {
+    grid-template-columns: auto;
+}
+
+.container .header {
+    background: #0a927b;
+    padding: 0.3em;
+    min-height: 1.8em;
+    /* border-radius: var(--radius) var(--radius) 0 0; */
+}
+
+.container .header h3 {
+    font-weight: 600;
+    font-size: 1em;
+    color: var(--plain-white);
+}
+
+.container article .ddV {
+    padding: calc(var(--gap-space) - 0.2em);
+}
+
+.container article {
+    /* height: fit-content; */
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
+    box-shadow: 0 0.5px #ffffff;
+}
+
+.searchContainer,
+.choiceContainer {
+    width: 100%;
+    justify-content: space-between;
+    /* padding: calc(var(--gap-space) - 0.2em); */
+    font-size: 2em;
+}
+
+.searchContainer input {
+    width: calc(100% - 2.2em);
+    height: 2em;
+    justify-content: space-between;
+    border: 1px solid var(--main-color);
+    padding-left: 0.5em;
+}
+
+.searchContainer button {
+    background: #ffc200;
+    color: var(--plain-white);
+    padding: 0.1em;
+    width: 2em;
+    height: 2em;
+}
+
+.choiceContainer select {
+    width: 100%;
+    height: 2em;
+    justify-content: space-between;
+    border: 1px solid var(--main-color);
+    padding-left: 0.5em;
+    background: transparent;
+}
+
+.percent-info {
+    min-width: 182px;
+}
+
+.percent-info .containerG {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1em;
+}
+
+.percent-info .containerG .percentModal {
+    border: 0.7em solid var(--main-color);
+    border-right-style: dotted;
+    border-top-style: dotted;
+    border-right-color: #e41111;
+    border-top-color: #e41111;
+    /* border-top-width: 5px;
+    border-right-width: 5px; */
+    -moz-border-right-colors: #e41111;
+    -moz-border-top-color: #e41111;
+    border-radius: 10em;
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.percent-info .containerG span {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.userDataContriant.o-grid {
+    grid-template-rows: 40px 100%;
+    gap: 0;
+    max-width: 100%;
+    overflow: auto;
+    max-height: 100vh;
+}
+
+/* .dashBoardUsersList {
+    grid-column: 1 span;
+    grid-column-start: 1;
+} */
+
+.dataList,
+.usersContainer {
+    gap: var(--gap-space);
+    padding: 0.5em;
+    justify-content: space-around;
+}
+
+.noBtnStyle {
+    background: transparent;
+    color: #000;
+    padding: 0;
+}
+
+.dataItemModal,
+.userModal {
+    height: fit-content;
+    padding: 0.5em;
+    font-weight: bold;
+    text-transform: capitalize;
+    background: #ddd;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.container-o2 {
+    margin-top: calc(2% + 2em);
+}
+
+.container-o2 .searchBox {
+    max-width: 500px;
+    /* margin: 0 auto; */
+    margin: 1em 0;
+}
+
+.container-o2 .searchBox .searchContainer {
+    padding: var(--gap-space);
+}
+
+.container-o2 .searchBox .header {
+    background-color: #0a927b;
+    color: var(--plain-white);
+    padding: 0.2em var(--gap-space);
+}
+
+.userDataContriant.o-grid {
+    grid-template-rows: 40px 100%;
+    gap: 0;
+    max-height: 100vh;
+    min-height: 250px;
+}
+
+.extendBox::-webkit-scrollbar {
+    width: 0;
+}
+
+/* .extendBox {
+    width: 0;
+} */
+
+.data-board {
+    grid-template-columns: 1fr;
+    gap: 0;
+    position: relative;
+    min-width: 840px;
+    max-height: 100%;
+    background-color: steelblue;
+}
+
+.tableHeader {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #e41111;
+    color: #fff;
+    min-width: 840px;
+}
+
+.tableHeader,
+.tableRow {
+    grid-template-columns: 0.3fr repeat(2, 1fr) 0.6fr 1.1fr;
+    gap: 0;
+    width: 100%;
+}
+
+.tableData {
+    border: 1px solid #ffc200;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+}
+
+.tableRow .tableData {
+    justify-content: flex-start;
+}
+
+.tableRow .tableData span {
+    padding-left: 0.6em;
+}
+
+.tableData input,
+.tableData select {
+    width: 100%;
+    height: 100%;
+    padding-left: var(--gap-space);
+    font-size: 1em;
+    background: #ffffff;
+}
+
+#phone {
+    height: 40px;
+}
+
+ul#iti-0__country-listbox {
+    color: var(--main-color);
+}
+
+/* .tableRow.inputRow {
+    grid-template-columns: 0.3fr repeat(2, 1fr) 0.7fr 1fr 0.2fr;
+} */
+
+.addData {
+    width: 100%;
+    right: 2em;
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+}
+
+.addData button {
+    background: #07a507;
+    padding: 0.2em 1em;
+    color: #ddd;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+@media (min-width: 720px) {
+    .dashView .container .lookout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .dashView .container .workout {
+        grid-template-columns: 0.7fr 1fr 1.3fr;
+    }
+}
+
+@media (max-width: 839px) {
+    .dashboard {
+        display: inline;
+        max-height: fit-content;
+    }
+
+    .navigateTo {
+        width: calc(100%);
+        padding-right: 3em;
+    }
+
+    .dashboard .dashView {
+        min-height: 100vh;
+    }
+
+    .controls {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 220px;
+        z-index: 200;
+        translate: -100% 0;
+        transition: 1s all;
+    }
+
+    .controls.show-controls {
+        translate: 0 0;
+    }
+
+    .closeControl {
+        color: #e41111;
+        background: transparent;
+        font-size: 1.5em;
+        position: absolute;
+        right: 0.5em;
+        top: 0.2em;
+        display: block;
+    }
+}
+
+@media (min-width: 900px) {
+    .dashView .container {
+        margin: calc(2vw + 1em);
+        padding-top: 2em;
+    }
+}

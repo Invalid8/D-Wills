@@ -1,29 +1,28 @@
 const path = require("path");
 const express = require("express");
+var createError = require("http-errors");
+var indexRouter = require("./routes/index");
+var authRouter = require("./routes/auth");
 const app = express();
-const PORT = process.env.PORT || 4500;
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view-engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "/public")));
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "views", "index.html"));
-});
+app.use("/", authRouter);
+app.use("/", indexRouter);
 
-app.get("/login.html", (req, res) => {
-    res.sendFile(path.join(__dirname, "views", "login.html"));
-});
-
-app.get("/register.html", (req, res) => {
-    res.sendFile(path.join(__dirname, "views", "register.html"));
+app.use(function (req, res, next) {
+    next(createError(404));
 });
 
 app.all("*", (req, res) => {
     res.status(404);
     if (req.accepts("html")) {
-        res.sendFile(path.join(__dirname, "views", "NotFound.html"));
+        res.render("NotFound.ejs");
     } else if (req.accepts("json")) {
         res.json({ error: "404 Not Found" });
     } else {
@@ -31,6 +30,10 @@ app.all("*", (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on PORT ${PORT}`);
+app.use(function (err, req, res, next) {
+    // render the error page
+    res.status(err.status || 500);
+    res.render("NotFound.ejs");
 });
+
+module.exports = app;

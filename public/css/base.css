@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    scroll-behavior: smooth;
+    list-style-type: none;
+    border: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 100%;
+    min-width: 360px;
+    background-color: #ddd;
+    font-size: 20px;
+}
+
+:root {
+    --main-color: #030c30;
+    --plain-white: #fff;
+    --hover-effect: 70%;
+    --gap-space: 12px;
+    --radius: 5px;
+}
+
+button:hover,
+a:hover {
+    opacity: var(--hover-effect);
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.bbCard {
+    background: var(--main-color);
+    color: var(--plain-white);
+}
+
+.bbCard a {
+    color: var(--plain-white);
+}
+
+.pwCard {
+    background: var(--plain-white);
+    color: var(--main-color);
+}
+
+.pwCard a {
+    color: var(--main-color);
+}
+
+.flex-bet-cen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+.grid-col-2-auto {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    place-items: center;
+}

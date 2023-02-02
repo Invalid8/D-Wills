@@ -11,6 +11,7 @@
             href="image/icons8-dashboard-32.png"
             type="image/x-icon"
         />
+        <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/style.css" />
         <link
             rel="stylesheet"
@@ -19,7 +20,7 @@
     </head>
 
     <body id="Home">
-        <header class="flex-bet-cen dark-bg030c30" id="header">
+        <header class="flex-bet-cen bbCard" id="header">
             <div class="logo">
                 <span>sync</span>
                 <span>dash</span>
@@ -33,22 +34,23 @@
                 </button>
                 <ul>
                     <li><a href="#Home">Home</a></li>
-                    <li><a href="/login.html">Login</a></li>
-                    <li><a href="/register.html">Register</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
                     <li><a href="#Footer" class="cnt-btn1">Contact us</a></li>
                 </ul>
             </nav>
         </header>
 
         <main class="">
-            <section class="banner-section dark-bg030c30">
+            <section class="banner-section bbCard">
                 <div class="container grid-col-2-auto">
                     <article>
                         <h1>
-                            work with the best
+                            <%= name %> work with the best
                             <span class="scc">Dashboard's</span> for your
                             business
                         </h1>
+                        <button><%= time %></button>
                         <p>
                             Lorem ipsum dolor, sit amet consectetur adipisicing
                             elit. Adipisci, sit perspiciatis. Dicta atque, optio
@@ -228,7 +230,7 @@
                 </svg>
             </div>
 
-            <aside class="users-section flex-bet-cen dark-bg030c30">
+            <aside class="users-section flex-bet-cen bbCard">
                 <div class="u-title">
                     <h3>All Talents</h3>
                     <p>
@@ -361,7 +363,7 @@
                 ></path>
             </svg>
         </div>
-        <footer class="dark-bg030c30" id="Footer">
+        <footer class="bbCard" id="Footer">
             <div class="container">
                 <nav class="flex-bet-cen">
                     <div>

@@ -2,11 +2,11 @@ $(document).ready(function () {
     $(document).scroll(() => {
         $(document).scrollTop() > $(".banner-section").offset().top
             ? $(".bottom .moreUsers").css("display", "block") &&
-              $("#header").removeClass("dark-bg030c30") &&
-              $("#header").addClass("light-bgfff")
+              $("#header").removeClass("bbCard") &&
+              $("#header").addClass("pwCard")
             : $(".bottom .moreUsers").css("display", "none") &&
-              $("#header").addClass("dark-bg030c30") &&
-              $("#header").removeClass("light-bgfff");
+              $("#header").addClass("bbCard") &&
+              $("#header").removeClass("pwCard");
     });
     $(".cnt-btn1, .cnt-btn2").click(function (event) {
         event.preventDefault();

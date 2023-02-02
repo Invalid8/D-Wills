@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Sync Dash</title>
+        <meta name="description" content="Dashboard" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="shortcut icon"
+            href="image/icons8-dashboard-32.png"
+            type="image/x-icon"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/index.css" />
+    </head>
+
+    <body id="Home">
+        <main class="dashboard">
+            <section class="controls pwCard flex-col">
+                <button class="closeControl">
+                    <i class="fa fa-close"></i>
+                </button>
+                <article class="userId bbCard">
+                    <div class="userImgBox">
+                        <img src="image/pic1.png" alt="..." />
+                    </div>
+                    <div class="userInfo">
+                        <h3><%= User.username %></h3>
+                        <h4><%= User.role %></h4>
+                    </div>
+                </article>
+                <article class="con-btn grid-1col-1row">
+                    <a href="/">
+                        <div class="cbModal flex-row">
+                            <i class="fa fa-bars"></i>
+                            <h4>Home</h4>
+                        </div>
+                    </a>
+                    <a href="/dashboards">
+                        <div class="cbModal flex-row">
+                            <i class="fa fa-tachometer"></i>
+                            <h4>Users Dashboard</h4>
+                        </div>
+                    </a>
+                    <a href="/daily-feeds">
+                        <div class="cbModal flex-row">
+                            <i class="fa fa-book"></i>
+                            <h4>Daily Feeds</h4>
+                        </div>
+                    </a>
+                    <a href="/favorites">
+                        <div class="cbModal flex-row">
+                            <i class="fa fa-star"></i>
+                            <h4>Favorites</h4>
+                        </div>
+                    </a>
+                    <a href="/notes">
+                        <div class="cbModal flex-row">
+                            <i class="fa fa-sticky-note"></i>
+                            <h4>Notes</h4>
+                        </div>
+                    </a>
+                    <a href="/settings">
+                        <div class="cbModal flex-row">
+                            <i class="fa fa-keyboard-o"></i>
+                            <h4>Settings</h4>
+                        </div>
+                    </a>
+                </article>
+                <article class="otherLinks bbCard">
+                    <!-- <div class="header">
+                        <h4>Other</h4>
+                    </div> -->
+                    <div class="flex-col">
+                        <div class="oLModal flex-row">
+                            <i class="fa fa-gamepad"></i>
+                            <h5><a href="">Play Games</a></h5>
+                        </div>
+                        <div class="oLModal flex-row">
+                            <i class="fa fa-phone"></i>
+                            <h5><a href="">Contact us</a></h5>
+                        </div>
+                        <div class="oLModal flex-row">
+                            <i class="fa fa-question"></i>
+                            <h5><a href="">Report</a></h5>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section class="dashView bbCard">
+                <div class="navigateTo flex-row">
+                    <button class="menu-bar"><i class="fa fa-bars"></i></button>
+                    <script>
+                        document
+                            .querySelector(".menu-bar")
+                            .addEventListener("click", () => {
+                                document
+                                    .querySelector(".controls")
+                                    .classList.add("show-controls");
+                            });
+                        document
+                            .querySelector(".closeControl")
+                            .addEventListener("click", () => {
+                                document
+                                    .querySelector(".controls")
+                                    .classList.remove("show-controls");
+                            });
+                    </script>
+                    <button class="log-out">
+                        <i class="fa fa-log-out"></i><span>Log out</span>
+                    </button>
+                </div>
+                <% if (page === "home") { %>
+                <div class="container o-grid">
+                    <script>
+                        document
+                            .querySelector(".container")
+                            .addEventListener("click", () => {
+                                document
+                                    .querySelector(".controls")
+                                    .classList.remove("show-controls");
+                            });
+                    </script>
+                    <h2 style="text-transform: capitalize">
+                        Welcome <%= User.username %>
+                    </h2>
+                    <div class="lookout o-grid">
+                        <article class="searchBox pwCard">
+                            <div class="header">
+                                <h3>Search</h3>
+                            </div>
+                            <div class="searchContainer flex-row ddV">
+                                <input
+                                    type="search"
+                                    name="searchThing"
+                                    id="searchThing"
+                                    placeholder="@example"
+                                />
+                                <button>
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </article>
+                        <article class="chooseDashBoard pwCard">
+                            <div class="header">
+                                <h3>Choose Dashboard</h3>
+                            </div>
+                            <div class="choiceContainer flex-row ddV">
+                                <select
+                                    name="chooseDashboards"
+                                    id="chooseDashboards"
+                                >
+                                    <option>None</option>
+                                    <option value="SchoolDatabase">
+                                        School Database
+                                    </option>
+                                    <option value="EmployeeDatabase">
+                                        Employee Database
+                                    </option>
+                                    <option value="TimetableDatabase">
+                                        Timetable Database
+                                    </option>
+                                </select>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="workout o-grid">
+                        <article class="percent-info pwCard">
+                            <div class="header">
+                                <h3>Percent Use</h3>
+                            </div>
+                            <div class="containerG flex-col">
+                                <div class="percentModal flex-col ddV">
+                                    <span>40%</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="userDataBase pwCard">
+                            <div class="header">
+                                <h3>User Database</h3>
+                            </div>
+                            <div class="dataList flex-col ddV noBtnStyle">
+                                <button>
+                                    <div class="dataItemModal grid-1col-1row">
+                                        Student Database Managements
+                                    </div>
+                                </button>
+                                <button>
+                                    <div class="dataItemModal grid-1col-1row">
+                                        Teacher Employee Records
+                                    </div>
+                                </button>
+                                <button>
+                                    <div class="dataItemModal grid-1col-1row">
+                                        Visiting List
+                                    </div>
+                                </button>
+                            </div>
+                        </article>
+                        <article class="dashBoardUsersList pwCard">
+                            <div class="header">
+                                <h3>Listing users</h3>
+                            </div>
+                            <div class="usersContainer flex-col noBtnStyle ddV">
+                                <button>
+                                    <div class="userModal flex-row">
+                                        <i class="fa fa-user"></i>
+                                        <h4>Fadamitan Daniel</h4>
+                                    </div>
+                                </button>
+                                <button>
+                                    <div class="userModal flex-row">
+                                        <i class="fa fa-user"></i>
+                                        <h4>Taiwo Daves</h4>
+                                    </div>
+                                </button>
+                                <button>
+                                    <div class="userModal flex-row">
+                                        <i class="fa fa-user"></i>
+                                        <h4>kate Tolu</h4>
+                                    </div>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <% } %> <% if (page === 'dashboards') { %>
+                <div class="container-o2">
+                    <h2>Bafuto Web Dev Student Dashboard</h2>
+                    <article class="searchBox pwCard">
+                        <div class="header">
+                            <h3>Search Data</h3>
+                        </div>
+                        <div class="searchContainer flex-row ddV">
+                            <input
+                                type="search"
+                                name="searchThing"
+                                id="searchThing"
+                                placeholder="@example"
+                            />
+                            <button>
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </article>
+                    <article class="userDataContriant o-grid">
+                        <div class="tableHeader o-grid">
+                            <div class="tableData">
+                                <span>SN</span>
+                            </div>
+                            <div class="tableData">
+                                <span>First Name</span>
+                            </div>
+                            <div class="tableData">
+                                <span>Last Name</span>
+                            </div>
+                            <div class="tableData">
+                                <span>Gender</span>
+                            </div>
+                            <div class="tableData">
+                                <span>Phone Nnumber</span>
+                            </div>
+                        </div>
+                        <div class="extendBox">
+                            <div class="data-board o-grid">
+                                <% students.forEach((element, index) => { %>
+                                <div class="tableRow o-grid">
+                                    <div class="tableData">
+                                        <span><%= ++index %></span>
+                                    </div>
+                                    <div class="tableData">
+                                        <span><%= element.firstName %></span>
+                                    </div>
+                                    <div class="tableData">
+                                        <span><%= element.lastName %></span>
+                                    </div>
+                                    <div class="tableData">
+                                        <span><%= element.gender %></span>
+                                    </div>
+                                    <div class="tableData">
+                                        <span><%= element.Pnumber %></span>
+                                    </div>
+                                </div>
+                                <% }) %>
+                                <form method="post" id="addStudent">
+                                    <div class="tableRow inputRow o-grid">
+                                        <div class="tableData">
+                                            <span>No</span>
+                                        </div>
+                                        <div class="tableData">
+                                            <input
+                                                type="text"
+                                                name="firstName"
+                                                id="firstName"
+                                                placeholder="First Name"
+                                                autocomplete="off"
+                                                required
+                                            />
+                                        </div>
+                                        <div class="tableData">
+                                            <input
+                                                type="text"
+                                                name="lastName"
+                                                id="lastName"
+                                                placeholder="Last Name"
+                                                autocomplete="off"
+                                                required
+                                            />
+                                        </div>
+                                        <div class="tableData">
+                                            <select
+                                                type="text"
+                                                name="gender"
+                                                id="gender"
+                                                required
+                                            >
+                                                <option
+                                                    value="none"
+                                                    selected
+                                                    disabled
+                                                    hidden
+                                                >
+                                                    None
+                                                </option>
+                                                <option value="male">
+                                                    Male
+                                                </option>
+                                                <option value="female">
+                                                    Female
+                                                </option>
+                                                <option value="other">
+                                                    Other
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="tableData">
+                                            <input
+                                                id="phone"
+                                                type="tel"
+                                                name="phone"
+                                                autocomplete="off"
+                                                required
+                                            />
+                                        </div>
+                                        <script>
+                                            const phoneInputField =
+                                                document.querySelector(
+                                                    "#phone"
+                                                );
+                                            const phoneInput =
+                                                window.intlTelInput(
+                                                    phoneInputField,
+                                                    {
+                                                        utilsScript:
+                                                            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+                                                    }
+                                                );
+                                        </script>
+                                    </div>
+                                    <div class="addData">
+                                        <button type="submit" id="getData">
+                                            Add
+                                        </button>
+                                    </div>
+                                    <script>
+                                        document
+                                            .querySelector("#addStudent")
+                                            .addEventListener("submit", (e) => {
+                                                e.preventDefault();
+                                                console.log("start");
+                                                const firstName = document
+                                                    .querySelector("#firstName")
+                                                    .value.toLowerCase();
+
+                                                const lastName = document
+                                                    .querySelector("#lastName")
+                                                    .value.toLowerCase();
+
+                                                const gender = document
+                                                    .querySelector("#gender")
+                                                    .value.toLowerCase();
+
+                                                const phoneNo =
+                                                    document.querySelector(
+                                                        "#phone"
+                                                    ).value;
+
+                                                let countryCode =
+                                                    document.querySelector(
+                                                        ".iti__selected-flag"
+                                                    ).title;
+
+                                                if (countryCode === undefined) {
+                                                    countryCode = "null:(null)";
+                                                }
+
+                                                const Pnumber = `(${
+                                                    countryCode.split(":")[1]
+                                                }) ${phoneNo}`;
+
+                                                fetch("/add-data", {
+                                                    method: "POST",
+                                                    headers: {
+                                                        Authorization:
+                                                            "Bearer abcdxyz",
+                                                        "Content-Type":
+                                                            "application/json",
+                                                    },
+                                                    body: JSON.stringify({
+                                                        firstName,
+                                                        lastName,
+                                                        gender,
+                                                        Pnumber,
+                                                    }),
+                                                }).then((res) => {
+                                                    return res.json();
+                                                });
+
+                                                firstName.value = "";
+                                                lastName.value = "";
+                                                gender.value = "none";
+                                                phoneNo.value = "";
+                                                console.log("end");
+                                                window.location.reload();
+                                            });
+                                    </script>
+                                </form>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <% } %> <% if (page === 'daily-feeds') { %>
+                <h1>Hello feeds</h1>
+                <% } %> <% if (page === 'favorites') { %>
+                <h1>Hello favorites</h1>
+                <% } %> <% if (page === 'notes') { %>
+                <h1>Hello note</h1>
+                <% } %> <% if (page === 'settings') { %>
+                <h1>Hello settings</h1>
+                <% } %>
+            </section>
+        </main>
+    </body>
+</html>
